@@ -1,7 +1,7 @@
 FROM amazonlinux:latest
 MAINTAINER Deb <yodebu@gmail.com>
 
-yum install python
+RUN yum install python
 ADD index.html /www/index.html
 
 EXPOSE 8000

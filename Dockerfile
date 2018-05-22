@@ -1,10 +1,12 @@
-FROM busybox
-MAINTAINER Chris <c@crccheck.com>
+FROM amazonlinux:latest
+MAINTAINER Deb <yodebu@gmail.com>
 
+yum install python
 ADD index.html /www/index.html
 
 EXPOSE 8000
 
 # Create a basic webserver and sleep forever
-CMD httpd -p 8000 -h /www; tail -f /dev/null
+WORKDIR /www/
+CMD python -m SimpleHTTPServer 8000
 
